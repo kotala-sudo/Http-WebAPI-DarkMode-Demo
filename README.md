@@ -1,27 +1,101 @@
-# HTTPWebAPIDemo
+# 🛍️ Angular 19 HTTP-WebAPI-Demo Project
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.2.
+This Angular 19 project demonstrates data fetching from an Web API, theming with dark mode, icon integration, and component/service architecture.
 
-## Development server
+---
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## ✨ Features
 
-## Code scaffolding
+- ✅ Fetch product data using Angular's `HttpClient` from [FakeStoreAPI](https://fakestoreapi.com/)
+- 🌙 Toggleable **Dark Mode** using **Bootstrap Icons** (sun/moon)
+- 💡 Angular **Signals** for responsive theme switching
+- 🎨 Responsive layout using **Bootstrap**
+- 🔎 Live product search across all string attributes
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+---
 
-## Build
+## 📦 Bootstrap Styling
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1. \*\*In order to use Bootstrap and Bootstrap icons run the following commands:
 
-## Running unit tests
+   ```bash
+   npm install bootstrap
+   npm install bootstrap-icons
+   ```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+2. **Configure Bootstrap and Icons**  
+   In your `angular.json`, include the styles and scripts:
 
-## Running end-to-end tests
+   ```json
+   "styles": [
+     "node_modules/bootstrap/dist/css/bootstrap.min.css",
+     "node_modules/bootstrap-icons/font/bootstrap-icons.css",
+     "src/styles.css"
+   ],
+   "scripts": [
+     "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+   ]
+   ```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+---
 
-## Further help
+## 🧱 Project Structure
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### 📁 Components
+
+#### 1. `AppComponent`
+
+- Root component
+- Hosts: `NavBarComponent`, `MainContentComponent`, `FooterComponent`
+
+#### 2. `NavBarComponent`
+
+- Contains a search bar and toggleable **sun/moon** icons using **Bootstrap Icons**
+- Clicking the icon toggles between light and dark mode
+
+#### 3. `MainContentComponent`
+
+- Displays product cards fetched from the API
+- Dynamically filters products as user types in the search bar
+
+#### 4. `FooterComponent`
+
+- Simple footer for the webpage
+
+---
+
+### ⚙️ Services
+
+#### 1. `ProductService`
+
+- Uses `HttpClient` to fetch products from [https://fakestoreapi.com/](https://fakestoreapi.com/)
+- Provides `filterProductsByKeyword()` method that searches all string attributes of products to match a keyword
+
+#### 2. `DarkModeService`
+
+- Manages the app's dark mode theme using an Angular **Signal** `darkModeSignal`
+- Toggled by clicking the icon in the navbar
+- The signal updates the `data-bs-theme` attribute in `app.component.html` to switch themes
+
+---
+
+## 🎨 Dark Mode Icons
+
+- Uses Bootstrap Icons from [getbootstrap.com/icons](https://icons.getbootstrap.com/)
+- Icons used:
+  - `bi-moon-fill` 🌙
+  - `bi-sun-fill` ☀️
+
+---
+
+## 🧠 Concepts Demonstrated
+
+- Angular 19 components, services, and signals
+- HTTP GET requests using `HttpClient`
+- Bootstrap 5 styling and layout
+- Theme toggling with `data-bs-theme`
+- Dynamic, client-side product filtering
+
+---
+
+Enjoy building! 🚀
