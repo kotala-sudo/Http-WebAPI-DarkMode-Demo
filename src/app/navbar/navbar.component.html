@@ -13,8 +13,8 @@
       />
     </form>
     <div>
-        <!-- The moon icon is shown if the darkModeSignal is not null -->
-      @if(this.darkModelService.darkModeSignal()){
+      <!-- The moon icon is shown if the darkModeSignal is not null -->
+      @if (this.darkModelService.darkModeSignal()){
       <span (click)="toggleDarkMode()">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -32,9 +32,7 @@
           />
         </svg>
       </span>
-      } 
-      <!-- else the bootstrap icon sun is shown -->
-      @else {
+      } @else{
       <span (click)="toggleDarkMode()">
         <svg
           xmlns="http://www.w3.org/2000/svg"
